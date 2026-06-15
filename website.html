@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="pics/icon.png">
+    <title>Island Quest</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+      <link rel="preload" href="pics/water/0.png" as="image">
+      <link rel="preload" href="pics/water/1.png" as="image">
+      <link rel="preload" href="pics/water/2.png" as="image">
+      <link rel="preload" href="pics/water/3.png" as="image">
+      <link rel="preload" href="pics/maggie/bench.png" as="image">
+      <link rel="preload" href="pics/maggie/bench-1.png" as="image">
+      <link rel="preload" href="pics/maggie/bench-2.png" as="image">
+  </head>
+  <body>
+    <style type="text/css">
+
+       @font-face {
+        font-family: "Pixelated";
+        src: url(fonts/pixeloid-font/PixeloidSansBold-OG894.ttf);
+        }
+      
+      .background {
+        position: fixed;
+        inset: 0;
+        background-attachment: fixed;
+        background-repeat: repeat;
+        animation: bgSwitch 0.8s infinite steps(1);
+        z-index: -1;
+        }
+
+      @keyframes bgSwitch {
+         0% {
+          background-image: url(pics/water/0.png);
+          }
+        33% {
+          background-image: url(pics/water/1.png);
+          }
+        66% {
+          background-image: url(pics/water/2.png);
+          }
+        100% {
+          background-image: url(pics/water/3.png);
+          }
+        }
+      
+      .container {
+        border-width:10px;
+        border-style:solid;
+        border-color: rgb(0, 9, 61);
+        margin: auto;
+        width: 961px;
+        height: 1135px;
+        position: relative;
+        padding: 0px;
+        z-index: 4;
+        background-image: url(pics/tile-grass.png);
+      }
+
+      .container-one {
+        position: fixed;
+        border-width:0px;
+        border-style:solid;
+        border-color: white;
+        background-image: url(pics/tile-grass.png);
+        background-attachment: fixed;
+        background-repeat: repeat;
+        width: 960px;
+        height: 170px;
+        position: relative;
+        left: 1px;
+        z-index: 5;
+      }
+
+      #name {
+        font-family: "Pixelated";
+        font-size: 2.5em;
+        -webkit-text-stroke: 3px rgb(0, 13, 87);
+        color: rgb(255, 246, 246);
+        margin-top: 30px;
+        margin-left: 270px;
+      }
+
+      .outer-text {
+        border: 5px solid rgb(0, 9, 61);
+        height: 340px;
+        background-color: white;
+        padding-top: 10px;
+        width: 569px;
+        position: relative;
+        margin-left: 5px;
+        margin-top: -205px;
+        box-shadow: inset 13px 0 6px -10px rgb(66 66 66 / 30%), inset -13px 0 6px -10px rgb(66 66 66 / 30%), inset 0 13px 6px -10px #f0f0f0, inset 0 0 0 -10px rgb(66 66 66 / 30%);
+      }
+
+      text-1 {
+        font-family: "Pixelated";
+        font-size: 1.25em;
+        color: rgb(56, 67, 133);
+        text-align: justify;
+      }
+
+       .outer-content {
+        border: 5px solid rgb(0, 9, 61);
+        height: 195px;
+        background-image: url(pics/tile-wall.png);
+        width: 357px;
+        position: relative;
+        margin-left: 589px;
+        margin-top: 5px;
+      }
+
+      button {
+        border-radius: 50px;
+        border: 2px solid black;
+        background-color: #f0f0f0;
+        background-size: cover;
+        font-family: "Pixelated";
+        font-size: 1.25em;
+        color: rgb(56, 67, 133);
+        width: 276px;
+        height: 50px;
+        margin-top: 20px;
+        margin-left: 35px;
+      }
+
+      video {
+        border: 5px solid rgb(0, 9, 61);
+        margin-top: 5px;
+        margin-left: 5px;
+      }
+
+      .bench {
+        border: 0px;
+        position:relative;
+        height: 120px;
+        width: 160px;
+        margin-top: -510px;
+        margin-left: 600px;
+        animation: benchSwitch 3s steps(1, end) infinite;
+      }
+
+      @keyframes benchSwitch {
+        0%,85% {
+          background-image: url(pics/maggie/bench.png);
+        }
+
+        90% {
+          background-image: url(pics/maggie/bench-1.png);
+        }
+
+        95% {
+          background-image: url(pics/maggie/bench-2.png);
+        }
+
+        100% {
+          background-image: url(pics/maggie/bench.png);
+        }
+
+      }
+
+      .outer-text2 {
+        border: 5px solid rgb(0, 9, 61);
+        background-color: white;
+        padding-top: 10px;
+        width:285px;
+        height: 450px;
+        position: relative;
+        margin-left: 660px;
+        margin-top: 5px;
+        box-shadow: inset 13px 0 6px -10px rgb(66 66 66 / 30%), inset -13px 0 6px -10px rgb(66 66 66 / 30%), inset 0 13px 6px -10px #f0f0f0, inset 0 0 0 -10px rgb(66 66 66 / 30%);
+      }
+
+      .outer-text3 {
+        border: 5px solid rgb(0, 9, 61);
+        background-color: white;
+        padding-top: 10px;
+        width:640px;
+        height: 75px;
+        position: relative;
+        margin-left: 5px;
+        margin-top: -95px;
+        box-shadow: inset 13px 0 6px -10px rgb(66 66 66 / 30%), inset -13px 0 6px -10px rgb(66 66 66 / 30%), inset 0 13px 6px -10px #f0f0f0, inset 0 0 0 -10px rgb(66 66 66 / 30%);
+      }
+
+      .box {
+        border: 5px solid rgb(0, 9, 61);
+        background-image: url(pics/ice\ cream.png);
+        background-color: white;
+        background-attachment: fixed;
+        width: 165px;
+        height: 140px;
+        margin-left: 780px;
+        margin-top: -140px;
+        position:relative;
+      }
+
+    </style>
+
+    <div class="background"></div>
+    <div class="container">
+      <div class="container-one">
+      <img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png"><img src="pics/border.png">
+      <div id="name">~Island Quest~</div></div>
+      
+      <div class="outer-content"> <img src="pics/icon.png"><img src="pics/icon.png"><img src="pics/icon.png"><img src="pics/icon.png"><img src="pics/icon.png"><img src="pics/icon.png"><img src="pics/icon.png">
+        <a href="https://stefi03.itch.io/island-quest" target="_blank"><button> &nbsp;~Press To Play~&nbsp;</button></a>
+        <br> <br> <img src="pics/icon.png"><img src="pics/icon.png"><img src="pics/icon.png"><img src="pics/icon.png"><img src="pics/icon.png"><img src="pics/icon.png"><img src="pics/icon.png">
+        
+    
+      </div>
+      <div class="outer-text"> <text-1>&nbsp;Island Quest is a small cozy single player &nbsp;digital game, &nbsp;created using Pygame. <br> <br>&nbsp;The game's purpose is to explore the &nbsp;basic characteristics of cozy games and &nbsp;focus on emotional engagement, absence &nbsp;of time or competitive pressures and the &nbsp;aesthetics of comfort. <br> <br>&nbsp;The game includes simple exploration and &nbsp;care missions, with an emphasis on a &nbsp;sense of rhythm, space and emotional &nbsp;response.</text-1></div>
+
+      <video width="640" height="auto" autoplay loop muted>
+        <source src="Trailer.mp4" type="video/mp4">
+      </video>
+    
+    <div class="bench"></div>
+    <div class="box"></div>
+    <div class="outer-text2"><text-1>&nbsp;&nbsp;&nbsp;~Game Features~<br> <br>&nbsp;cute 2D pixelated &nbsp;graphs <br><br>&nbsp;third person camera <br><br>&nbsp;an open world to &nbsp;explore <br><br>&nbsp;8 missions to &nbsp;complete <br><br>&nbsp;many characters to &nbsp;meet<br> <br>&nbsp;available on &nbsp;Desktop/Pc</text-1></div>
+    <div class="outer-text3"><text-1><br>&nbsp;&nbsp;&nbsp;&nbsp;~You can email me: apoststefi52@gmail.com~ <br></text-1></div>
+    <img src="pics/border-2.png" style="margin-top: 65px;"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png"><img src="pics/border-2.png">
+    </div>
+
+  </body>
+</html>
